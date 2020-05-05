@@ -1,0 +1,1 @@
+python test.py --root /home/lhy/public/Dataset/ -d mars --resume log-mars/best_model.pth.tar --save_dir log-mars

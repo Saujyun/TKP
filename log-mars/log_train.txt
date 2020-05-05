@@ -1,0 +1,428 @@
+==========
+Args:Namespace(bp_to_vid=False, dataset='mars', eval_step=10, evaluate=False, gamma=0.1, gpu_devices='0', height=256, img_arch='img_resnet50', img_test_batch=512, lr=0.0003, max_epoch=150, num_instances=4, resume='', root='/home/lhy/public/Dataset/', sample_stride=8, save_dir='log-mars', seed=1, seq_len=4, start_epoch=0, start_eval=0, stepsize=[60, 120], test_batch=128, train_batch=16, vid_arch='vid_nonlocalresnet50', weight_decay=0.0005, width=128, workers=4)
+==========
+Currently using GPU 0
+Initializing dataset mars
+=> MARS loaded
+Dataset statistics:
+  ------------------------------
+  subset   | # ids | # tracklets
+  ------------------------------
+  train    |   625 |     8298
+  query    |   626 |     1980
+  gallery  |   622 |     9330
+  ------------------------------
+  total    |  1251 |    19608
+  number of images per tracklet: 2 ~ 920, average 59.5
+  ------------------------------
+Initializing model: vid_nonlocalresnet50 and img_resnet50
+Video model size: 30.86650M
+Image model size: 23.50803M
+==> Start training
+Epoch1 Time:477.6s Data:1.6s vXent:6.7590 iXent:6.7769 TKP_F:7.7369 TKP_D:0.6795 i2v:0.4421 v2i:0.7430 i2i:0.8358 v2v:0.3579 vAcc:3.33% iAcc:3.30% 
+Epoch2 Time:481.2s Data:1.6s vXent:6.1443 iXent:6.1592 TKP_F:0.8374 TKP_D:0.1070 i2v:0.1718 v2i:0.3001 i2i:0.3423 v2v:0.1215 vAcc:4.26% iAcc:4.18% 
+Epoch3 Time:474.3s Data:1.6s vXent:5.9112 iXent:5.9334 TKP_F:1.4582 TKP_D:0.1819 i2v:0.1667 v2i:0.3634 i2i:0.4027 v2v:0.1370 vAcc:5.54% iAcc:5.54% 
+Epoch4 Time:472.5s Data:1.6s vXent:5.4531 iXent:5.5011 TKP_F:3.4271 TKP_D:0.4809 i2v:0.2170 v2i:0.5009 i2i:0.5682 v2v:0.1677 vAcc:10.07% iAcc:9.80% 
+Epoch5 Time:489.7s Data:1.8s vXent:4.8250 iXent:4.9375 TKP_F:6.7470 TKP_D:0.9912 i2v:0.2954 v2i:0.7339 i2i:0.8439 v2v:0.2188 vAcc:15.47% iAcc:14.08% 
+Epoch6 Time:481.2s Data:1.6s vXent:4.2150 iXent:4.3968 TKP_F:8.5104 TKP_D:1.1640 i2v:0.3013 v2i:0.7707 i2i:0.8785 v2v:0.2321 vAcc:21.07% iAcc:18.75% 
+Epoch7 Time:477.4s Data:1.6s vXent:3.6565 iXent:3.9162 TKP_F:10.9538 TKP_D:1.4872 i2v:0.2911 v2i:0.8035 i2i:0.9448 v2v:0.2108 vAcc:26.54% iAcc:23.02% 
+Epoch8 Time:477.1s Data:1.6s vXent:3.1993 iXent:3.5161 TKP_F:13.3756 TKP_D:1.6420 i2v:0.2680 v2i:0.8095 i2i:0.9633 v2v:0.1872 vAcc:32.41% iAcc:27.56% 
+Epoch9 Time:483.2s Data:1.6s vXent:2.8635 iXent:3.2034 TKP_F:13.9675 TKP_D:1.6452 i2v:0.2296 v2i:0.7508 i2i:0.8977 v2v:0.1599 vAcc:36.95% iAcc:31.73% 
+Epoch10 Time:483.9s Data:1.6s vXent:2.5310 iXent:2.8907 TKP_F:14.6106 TKP_D:1.6922 i2v:0.2169 v2i:0.6887 i2i:0.8407 v2v:0.1426 vAcc:43.16% iAcc:36.58% 
+==> Test
+Extract video features
+Extracted features for query set, obtained torch.Size([1980, 2048]) matrix
+Extracted features for gallery set, obtained torch.Size([11310, 2048]) matrix
+Extract image features
+Extracted features for query set, obtained torch.Size([1980, 2048]) matrix
+Extracted features for gallery set, obtained torch.Size([11310, 2048]) matrix
+Extracting features complete in 3m 44s
+Computing distance matrix
+image to image
+top1:44.49% top5:65.56% top10:72.37% mAP:27.47%
+video to video
+top1:59.65% top5:78.13% top10:84.19% mAP:43.65%
+video to image
+top1:44.75% top5:67.98% top10:77.17% mAP:28.77%
+image to video
+top1:42.17% top5:63.54% top10:71.31% mAP:30.52%
+Epoch11 Time:456.5s Data:1.9s vXent:2.2876 iXent:2.6919 TKP_F:15.3207 TKP_D:1.6573 i2v:0.1836 v2i:0.6318 i2i:0.7920 v2v:0.1136 vAcc:46.74% iAcc:39.99% 
+Epoch12 Time:473.5s Data:1.6s vXent:2.0895 iXent:2.4942 TKP_F:16.0543 TKP_D:1.7001 i2v:0.1754 v2i:0.6386 i2i:0.8002 v2v:0.1034 vAcc:49.92% iAcc:42.49% 
+Epoch13 Time:477.5s Data:1.6s vXent:1.8622 iXent:2.2774 TKP_F:15.6578 TKP_D:1.5559 i2v:0.1526 v2i:0.5546 i2i:0.6921 v2v:0.0928 vAcc:54.66% iAcc:46.53% 
+Epoch14 Time:482.3s Data:1.6s vXent:1.7911 iXent:2.1955 TKP_F:18.8829 TKP_D:1.9264 i2v:0.1669 v2i:0.5914 i2i:0.7216 v2v:0.1096 vAcc:56.24% iAcc:48.68% 
+Epoch15 Time:474.6s Data:1.6s vXent:1.5986 iXent:2.0209 TKP_F:17.6609 TKP_D:1.7125 i2v:0.1442 v2i:0.4934 i2i:0.6282 v2v:0.0852 vAcc:60.33% iAcc:51.45% 
+Epoch16 Time:465.9s Data:1.5s vXent:1.5610 iXent:1.9755 TKP_F:19.4692 TKP_D:1.8844 i2v:0.1644 v2i:0.5574 i2i:0.6857 v2v:0.1015 vAcc:60.93% iAcc:52.59% 
+Epoch17 Time:478.8s Data:1.6s vXent:1.4060 iXent:1.8539 TKP_F:18.3872 TKP_D:1.7782 i2v:0.1438 v2i:0.5456 i2i:0.6781 v2v:0.0833 vAcc:63.86% iAcc:54.68% 
+Epoch18 Time:472.3s Data:1.6s vXent:1.3107 iXent:1.7568 TKP_F:17.7496 TKP_D:1.7018 i2v:0.1250 v2i:0.4972 i2i:0.6285 v2v:0.0656 vAcc:66.24% iAcc:57.16% 
+Epoch19 Time:471.9s Data:1.6s vXent:1.2487 iXent:1.6797 TKP_F:18.2808 TKP_D:1.6929 i2v:0.1219 v2i:0.4473 i2i:0.5723 v2v:0.0668 vAcc:67.93% iAcc:58.59% 
+Epoch20 Time:473.4s Data:1.5s vXent:1.1476 iXent:1.5629 TKP_F:18.2327 TKP_D:1.7167 i2v:0.1057 v2i:0.4166 i2i:0.5423 v2v:0.0510 vAcc:70.08% iAcc:61.09% 
+==> Test
+Extract video features
+Extracted features for query set, obtained torch.Size([1980, 2048]) matrix
+Extracted features for gallery set, obtained torch.Size([11310, 2048]) matrix
+Extract image features
+Extracted features for query set, obtained torch.Size([1980, 2048]) matrix
+Extracted features for gallery set, obtained torch.Size([11310, 2048]) matrix
+Extracting features complete in 3m 40s
+Computing distance matrix
+image to image
+top1:56.97% top5:76.57% top10:82.12% mAP:39.51%
+video to video
+top1:70.51% top5:86.67% top10:90.40% mAP:55.46%
+video to image
+top1:58.48% top5:79.80% top10:85.86% mAP:41.82%
+image to video
+top1:54.80% top5:74.04% top10:80.56% mAP:42.91%
+Epoch21 Time:477.0s Data:1.9s vXent:1.0970 iXent:1.5318 TKP_F:18.4606 TKP_D:1.6784 i2v:0.1069 v2i:0.4543 i2i:0.5718 v2v:0.0577 vAcc:70.84% iAcc:61.27% 
+Epoch22 Time:473.7s Data:1.7s vXent:1.1070 iXent:1.5126 TKP_F:19.4841 TKP_D:1.7851 i2v:0.1155 v2i:0.4795 i2i:0.5921 v2v:0.0667 vAcc:71.34% iAcc:62.60% 
+Epoch23 Time:477.1s Data:1.6s vXent:0.9975 iXent:1.4145 TKP_F:18.0923 TKP_D:1.6297 i2v:0.0934 v2i:0.3917 i2i:0.5030 v2v:0.0458 vAcc:73.87% iAcc:64.42% 
+Epoch24 Time:474.7s Data:1.6s vXent:0.9285 iXent:1.3610 TKP_F:18.9465 TKP_D:1.6517 i2v:0.0894 v2i:0.3801 i2i:0.4931 v2v:0.0415 vAcc:75.93% iAcc:66.00% 
+Epoch25 Time:471.3s Data:1.7s vXent:0.8745 iXent:1.2728 TKP_F:18.7590 TKP_D:1.6586 i2v:0.0866 v2i:0.3656 i2i:0.4652 v2v:0.0454 vAcc:77.12% iAcc:68.07% 
+Epoch26 Time:472.1s Data:1.5s vXent:0.8993 iXent:1.2871 TKP_F:20.3595 TKP_D:1.8746 i2v:0.0922 v2i:0.4042 i2i:0.5113 v2v:0.0477 vAcc:76.33% iAcc:68.11% 
+Epoch27 Time:473.2s Data:1.5s vXent:0.8411 iXent:1.2588 TKP_F:18.5286 TKP_D:1.6018 i2v:0.0927 v2i:0.3831 i2i:0.4945 v2v:0.0478 vAcc:78.51% iAcc:68.33% 
+Epoch28 Time:473.7s Data:1.6s vXent:0.7777 iXent:1.1789 TKP_F:19.2435 TKP_D:1.6567 i2v:0.0839 v2i:0.3586 i2i:0.4695 v2v:0.0422 vAcc:80.07% iAcc:70.62% 
+Epoch29 Time:467.6s Data:1.6s vXent:0.7953 iXent:1.1887 TKP_F:19.1888 TKP_D:1.6094 i2v:0.0847 v2i:0.3635 i2i:0.4709 v2v:0.0393 vAcc:79.42% iAcc:70.52% 
+Epoch30 Time:470.2s Data:1.6s vXent:0.7442 iXent:1.1377 TKP_F:18.3586 TKP_D:1.5433 i2v:0.0833 v2i:0.3476 i2i:0.4552 v2v:0.0403 vAcc:81.18% iAcc:71.73% 
+==> Test
+Extract video features
+Extracted features for query set, obtained torch.Size([1980, 2048]) matrix
+Extracted features for gallery set, obtained torch.Size([11310, 2048]) matrix
+Extract image features
+Extracted features for query set, obtained torch.Size([1980, 2048]) matrix
+Extracted features for gallery set, obtained torch.Size([11310, 2048]) matrix
+Extracting features complete in 3m 40s
+Computing distance matrix
+image to image
+top1:61.21% top5:78.64% top10:84.24% mAP:43.01%
+video to video
+top1:72.58% top5:87.42% top10:91.26% mAP:57.62%
+video to image
+top1:60.40% top5:80.91% top10:86.82% mAP:42.98%
+image to video
+top1:56.92% top5:76.52% top10:82.98% mAP:45.25%
+Epoch31 Time:470.2s Data:1.9s vXent:0.7659 iXent:1.1518 TKP_F:19.7108 TKP_D:1.6474 i2v:0.0809 v2i:0.3788 i2i:0.4773 v2v:0.0393 vAcc:80.13% iAcc:71.58% 
+Epoch32 Time:454.5s Data:1.6s vXent:0.6712 iXent:1.0345 TKP_F:17.5379 TKP_D:1.4472 i2v:0.0758 v2i:0.3251 i2i:0.4226 v2v:0.0367 vAcc:82.93% iAcc:74.49% 
+Epoch33 Time:469.9s Data:1.6s vXent:0.6871 iXent:1.0621 TKP_F:18.0561 TKP_D:1.4509 i2v:0.0803 v2i:0.3311 i2i:0.4316 v2v:0.0414 vAcc:82.29% iAcc:73.60% 
+Epoch34 Time:464.2s Data:1.6s vXent:0.6471 iXent:1.0071 TKP_F:18.3453 TKP_D:1.5027 i2v:0.0751 v2i:0.3103 i2i:0.4028 v2v:0.0386 vAcc:83.34% iAcc:74.90% 
+Epoch35 Time:470.9s Data:1.7s vXent:0.6288 iXent:0.9938 TKP_F:18.1654 TKP_D:1.5561 i2v:0.0727 v2i:0.3247 i2i:0.4224 v2v:0.0315 vAcc:84.41% iAcc:75.48% 
+Epoch36 Time:474.0s Data:1.6s vXent:0.6157 iXent:0.9569 TKP_F:18.0759 TKP_D:1.5034 i2v:0.0720 v2i:0.3090 i2i:0.4059 v2v:0.0328 vAcc:84.16% iAcc:76.55% 
+Epoch37 Time:472.2s Data:1.6s vXent:0.5783 iXent:0.9283 TKP_F:17.7711 TKP_D:1.4622 i2v:0.0600 v2i:0.3017 i2i:0.4003 v2v:0.0252 vAcc:85.65% iAcc:77.39% 
+Epoch38 Time:478.4s Data:1.6s vXent:0.5413 iXent:0.8832 TKP_F:17.3221 TKP_D:1.4221 i2v:0.0632 v2i:0.2812 i2i:0.3722 v2v:0.0268 vAcc:86.41% iAcc:78.50% 
+Epoch39 Time:472.4s Data:1.7s vXent:0.6068 iXent:0.9392 TKP_F:19.8543 TKP_D:1.5965 i2v:0.0707 v2i:0.3247 i2i:0.4242 v2v:0.0321 vAcc:84.72% iAcc:76.81% 
+Epoch40 Time:470.1s Data:1.6s vXent:0.5500 iXent:0.8869 TKP_F:17.7227 TKP_D:1.4087 i2v:0.0569 v2i:0.2785 i2i:0.3745 v2v:0.0243 vAcc:86.44% iAcc:78.41% 
+==> Test
+Extract video features
+Extracted features for query set, obtained torch.Size([1980, 2048]) matrix
+Extracted features for gallery set, obtained torch.Size([11310, 2048]) matrix
+Extract image features
+Extracted features for query set, obtained torch.Size([1980, 2048]) matrix
+Extracted features for gallery set, obtained torch.Size([11310, 2048]) matrix
+Extracting features complete in 3m 40s
+Computing distance matrix
+image to image
+top1:62.73% top5:80.91% top10:86.11% mAP:44.86%
+video to video
+top1:76.21% top5:89.24% top10:92.63% mAP:62.06%
+video to image
+top1:66.62% top5:85.76% top10:90.66% mAP:49.26%
+image to video
+top1:65.15% top5:81.97% top10:86.46% mAP:51.06%
+Epoch41 Time:463.6s Data:1.9s vXent:0.5631 iXent:0.9247 TKP_F:18.7684 TKP_D:1.5002 i2v:0.0568 v2i:0.3037 i2i:0.4068 v2v:0.0213 vAcc:85.90% iAcc:77.16% 
+Epoch42 Time:468.5s Data:1.7s vXent:0.5154 iXent:0.8346 TKP_F:18.6500 TKP_D:1.5019 i2v:0.0592 v2i:0.2508 i2i:0.3388 v2v:0.0248 vAcc:87.05% iAcc:79.27% 
+Epoch43 Time:465.7s Data:1.6s vXent:0.4919 iXent:0.8142 TKP_F:17.5677 TKP_D:1.4269 i2v:0.0539 v2i:0.2519 i2i:0.3481 v2v:0.0196 vAcc:87.41% iAcc:79.68% 
+Epoch44 Time:465.7s Data:1.6s vXent:0.5159 iXent:0.8258 TKP_F:19.4879 TKP_D:1.5522 i2v:0.0691 v2i:0.2933 i2i:0.3864 v2v:0.0316 vAcc:87.53% iAcc:79.91% 
+Epoch45 Time:468.2s Data:1.5s vXent:0.5070 iXent:0.8167 TKP_F:18.7538 TKP_D:1.4878 i2v:0.0675 v2i:0.2665 i2i:0.3556 v2v:0.0299 vAcc:87.93% iAcc:80.25% 
+Epoch46 Time:467.6s Data:1.5s vXent:0.5069 iXent:0.8098 TKP_F:18.4701 TKP_D:1.4590 i2v:0.0636 v2i:0.2685 i2i:0.3650 v2v:0.0286 vAcc:87.93% iAcc:80.65% 
+Epoch47 Time:467.6s Data:1.6s vXent:0.4740 iXent:0.7838 TKP_F:18.0022 TKP_D:1.4077 i2v:0.0563 v2i:0.2602 i2i:0.3480 v2v:0.0219 vAcc:88.22% iAcc:81.04% 
+Epoch48 Time:468.5s Data:1.6s vXent:0.4622 iXent:0.7558 TKP_F:17.3919 TKP_D:1.3328 i2v:0.0569 v2i:0.2493 i2i:0.3351 v2v:0.0248 vAcc:88.79% iAcc:81.64% 
+Epoch49 Time:468.7s Data:1.5s vXent:0.4765 iXent:0.7727 TKP_F:18.1372 TKP_D:1.4687 i2v:0.0556 v2i:0.2555 i2i:0.3385 v2v:0.0218 vAcc:88.58% iAcc:81.38% 
+Epoch50 Time:469.0s Data:1.6s vXent:0.4426 iXent:0.7374 TKP_F:16.8165 TKP_D:1.3108 i2v:0.0488 v2i:0.2463 i2i:0.3382 v2v:0.0176 vAcc:89.28% iAcc:82.00% 
+==> Test
+Extract video features
+Extracted features for query set, obtained torch.Size([1980, 2048]) matrix
+Extracted features for gallery set, obtained torch.Size([11310, 2048]) matrix
+Extract image features
+Extracted features for query set, obtained torch.Size([1980, 2048]) matrix
+Extracted features for gallery set, obtained torch.Size([11310, 2048]) matrix
+Extracting features complete in 3m 42s
+Computing distance matrix
+image to image
+top1:61.97% top5:80.61% top10:85.35% mAP:44.47%
+video to video
+top1:75.15% top5:89.04% top10:92.02% mAP:60.57%
+video to image
+top1:66.77% top5:86.01% top10:90.30% mAP:48.25%
+image to video
+top1:62.12% top5:78.28% top10:83.79% mAP:49.01%
+Epoch51 Time:466.5s Data:1.6s vXent:0.4081 iXent:0.6945 TKP_F:16.5839 TKP_D:1.3066 i2v:0.0460 v2i:0.2107 i2i:0.3013 v2v:0.0144 vAcc:90.17% iAcc:83.63% 
+Epoch52 Time:466.5s Data:1.6s vXent:0.4322 iXent:0.7257 TKP_F:17.5887 TKP_D:1.3626 i2v:0.0574 v2i:0.2579 i2i:0.3511 v2v:0.0237 vAcc:90.26% iAcc:83.15% 
+Epoch53 Time:466.6s Data:1.6s vXent:0.4889 iXent:0.7667 TKP_F:18.5304 TKP_D:1.4487 i2v:0.0656 v2i:0.2706 i2i:0.3555 v2v:0.0320 vAcc:88.38% iAcc:81.27% 
+Epoch54 Time:463.8s Data:1.7s vXent:0.4396 iXent:0.7210 TKP_F:17.4641 TKP_D:1.3658 i2v:0.0556 v2i:0.2537 i2i:0.3382 v2v:0.0230 vAcc:89.45% iAcc:82.94% 
+Epoch55 Time:467.1s Data:1.6s vXent:0.3764 iXent:0.6625 TKP_F:15.9591 TKP_D:1.2451 i2v:0.0445 v2i:0.2132 i2i:0.2966 v2v:0.0146 vAcc:91.64% iAcc:84.93% 
+Epoch56 Time:458.6s Data:1.6s vXent:0.4404 iXent:0.7108 TKP_F:18.3090 TKP_D:1.4011 i2v:0.0521 v2i:0.2491 i2i:0.3420 v2v:0.0180 vAcc:89.83% iAcc:83.26% 
+Epoch57 Time:467.7s Data:1.7s vXent:0.4057 iXent:0.6755 TKP_F:17.1367 TKP_D:1.2939 i2v:0.0477 v2i:0.2237 i2i:0.3106 v2v:0.0176 vAcc:90.73% iAcc:84.04% 
+Epoch58 Time:466.7s Data:1.6s vXent:0.4182 iXent:0.6916 TKP_F:18.1462 TKP_D:1.3851 i2v:0.0478 v2i:0.2181 i2i:0.3047 v2v:0.0169 vAcc:90.27% iAcc:83.33% 
+Epoch59 Time:468.8s Data:1.6s vXent:0.3934 iXent:0.6706 TKP_F:17.8145 TKP_D:1.3823 i2v:0.0496 v2i:0.2303 i2i:0.3118 v2v:0.0230 vAcc:91.33% iAcc:84.72% 
+Epoch60 Time:467.2s Data:1.6s vXent:0.3896 iXent:0.6716 TKP_F:17.8718 TKP_D:1.3781 i2v:0.0471 v2i:0.2165 i2i:0.3016 v2v:0.0164 vAcc:91.06% iAcc:84.28% 
+==> Test
+Extract video features
+Extracted features for query set, obtained torch.Size([1980, 2048]) matrix
+Extracted features for gallery set, obtained torch.Size([11310, 2048]) matrix
+Extract image features
+Extracted features for query set, obtained torch.Size([1980, 2048]) matrix
+Extracted features for gallery set, obtained torch.Size([11310, 2048]) matrix
+Extracting features complete in 3m 41s
+Computing distance matrix
+image to image
+top1:62.98% top5:81.06% top10:85.56% mAP:45.43%
+video to video
+top1:74.09% top5:88.13% top10:91.57% mAP:58.86%
+video to image
+top1:62.12% top5:81.52% top10:86.62% mAP:45.25%
+image to video
+top1:57.17% top5:75.35% top10:81.72% mAP:44.73%
+Epoch61 Time:463.1s Data:1.6s vXent:0.2122 iXent:0.4555 TKP_F:12.6130 TKP_D:1.1319 i2v:0.0384 v2i:0.1828 i2i:0.2700 v2v:0.0131 vAcc:96.34% iAcc:90.73% 
+Epoch62 Time:467.4s Data:1.7s vXent:0.1414 iXent:0.3627 TKP_F:9.8815 TKP_D:0.8665 i2v:0.0250 v2i:0.1380 i2i:0.2120 v2v:0.0054 vAcc:97.99% iAcc:92.90% 
+Epoch63 Time:464.5s Data:1.6s vXent:0.1265 iXent:0.3365 TKP_F:9.4363 TKP_D:0.8436 i2v:0.0229 v2i:0.1265 i2i:0.1985 v2v:0.0050 vAcc:98.36% iAcc:93.73% 
+Epoch64 Time:465.4s Data:1.6s vXent:0.1126 iXent:0.3106 TKP_F:9.1765 TKP_D:0.7872 i2v:0.0233 v2i:0.1237 i2i:0.1915 v2v:0.0055 vAcc:98.63% iAcc:94.44% 
+Epoch65 Time:451.6s Data:1.6s vXent:0.1155 iXent:0.3161 TKP_F:9.0672 TKP_D:0.7945 i2v:0.0237 v2i:0.1402 i2i:0.2159 v2v:0.0043 vAcc:98.55% iAcc:94.39% 
+Epoch66 Time:463.7s Data:1.5s vXent:0.1121 iXent:0.3016 TKP_F:8.7510 TKP_D:0.7443 i2v:0.0201 v2i:0.1078 i2i:0.1787 v2v:0.0028 vAcc:98.59% iAcc:94.68% 
+Epoch67 Time:454.9s Data:1.5s vXent:0.1084 iXent:0.2953 TKP_F:8.8135 TKP_D:0.7568 i2v:0.0190 v2i:0.1155 i2i:0.1890 v2v:0.0016 vAcc:98.83% iAcc:94.72% 
+Epoch68 Time:465.7s Data:1.6s vXent:0.1128 iXent:0.3029 TKP_F:8.6656 TKP_D:0.7443 i2v:0.0221 v2i:0.1214 i2i:0.1992 v2v:0.0032 vAcc:98.48% iAcc:94.59% 
+Epoch69 Time:465.0s Data:1.6s vXent:0.1081 iXent:0.2965 TKP_F:8.7551 TKP_D:0.7674 i2v:0.0224 v2i:0.1311 i2i:0.2076 v2v:0.0026 vAcc:98.76% iAcc:94.91% 
+Epoch70 Time:466.0s Data:1.6s vXent:0.1022 iXent:0.2897 TKP_F:8.6204 TKP_D:0.7570 i2v:0.0230 v2i:0.1213 i2i:0.1978 v2v:0.0048 vAcc:98.96% iAcc:94.91% 
+==> Test
+Extract video features
+Extracted features for query set, obtained torch.Size([1980, 2048]) matrix
+Extracted features for gallery set, obtained torch.Size([11310, 2048]) matrix
+Extract image features
+Extracted features for query set, obtained torch.Size([1980, 2048]) matrix
+Extracted features for gallery set, obtained torch.Size([11310, 2048]) matrix
+Extracting features complete in 3m 41s
+Computing distance matrix
+image to image
+top1:68.69% top5:84.49% top10:88.59% mAP:51.96%
+video to video
+top1:79.80% top5:91.67% top10:94.14% mAP:67.62%
+video to image
+top1:74.14% top5:90.05% top10:93.48% mAP:58.26%
+image to video
+top1:71.82% top5:86.06% top10:89.80% mAP:59.51%
+Epoch71 Time:466.9s Data:1.9s vXent:0.1032 iXent:0.2865 TKP_F:8.7027 TKP_D:0.7553 i2v:0.0202 v2i:0.1157 i2i:0.1899 v2v:0.0031 vAcc:98.75% iAcc:95.03% 
+Epoch72 Time:466.8s Data:1.6s vXent:0.1007 iXent:0.2790 TKP_F:8.7355 TKP_D:0.7846 i2v:0.0200 v2i:0.1006 i2i:0.1661 v2v:0.0046 vAcc:99.10% iAcc:95.26% 
+Epoch73 Time:465.4s Data:1.7s vXent:0.1102 iXent:0.2859 TKP_F:8.7441 TKP_D:0.7522 i2v:0.0239 v2i:0.0985 i2i:0.1579 v2v:0.0108 vAcc:98.88% iAcc:95.19% 
+Epoch74 Time:464.6s Data:1.6s vXent:0.1036 iXent:0.2771 TKP_F:8.5283 TKP_D:0.7347 i2v:0.0199 v2i:0.0894 i2i:0.1572 v2v:0.0043 vAcc:99.07% iAcc:95.44% 
+Epoch75 Time:457.9s Data:1.6s vXent:0.1048 iXent:0.2774 TKP_F:8.4370 TKP_D:0.7163 i2v:0.0210 v2i:0.1103 i2i:0.1755 v2v:0.0033 vAcc:99.03% iAcc:95.40% 
+Epoch76 Time:466.2s Data:1.5s vXent:0.0993 iXent:0.2687 TKP_F:8.5002 TKP_D:0.7521 i2v:0.0169 v2i:0.0907 i2i:0.1571 v2v:0.0029 vAcc:99.25% iAcc:95.54% 
+Epoch77 Time:465.8s Data:1.6s vXent:0.1006 iXent:0.2718 TKP_F:8.6372 TKP_D:0.7828 i2v:0.0179 v2i:0.0960 i2i:0.1651 v2v:0.0023 vAcc:99.17% iAcc:95.64% 
+Epoch78 Time:468.2s Data:1.6s vXent:0.1086 iXent:0.2783 TKP_F:8.7508 TKP_D:0.8188 i2v:0.0207 v2i:0.1093 i2i:0.1803 v2v:0.0034 vAcc:99.18% iAcc:95.58% 
+Epoch79 Time:466.5s Data:1.6s vXent:0.1012 iXent:0.2678 TKP_F:8.6074 TKP_D:0.7566 i2v:0.0179 v2i:0.0978 i2i:0.1633 v2v:0.0018 vAcc:99.12% iAcc:95.57% 
+Epoch80 Time:465.6s Data:1.6s vXent:0.1016 iXent:0.2686 TKP_F:8.3682 TKP_D:0.7609 i2v:0.0157 v2i:0.0865 i2i:0.1506 v2v:0.0015 vAcc:98.96% iAcc:95.61% 
+==> Test
+Extract video features
+Extracted features for query set, obtained torch.Size([1980, 2048]) matrix
+Extracted features for gallery set, obtained torch.Size([11310, 2048]) matrix
+Extract image features
+Extracted features for query set, obtained torch.Size([1980, 2048]) matrix
+Extracted features for gallery set, obtained torch.Size([11310, 2048]) matrix
+Extracting features complete in 3m 40s
+Computing distance matrix
+image to image
+top1:67.37% top5:83.99% top10:88.74% mAP:51.83%
+video to video
+top1:79.95% top5:91.77% top10:93.84% mAP:67.73%
+video to image
+top1:74.44% top5:89.55% top10:93.03% mAP:58.16%
+image to video
+top1:71.36% top5:85.81% top10:89.09% mAP:59.43%
+Epoch81 Time:466.0s Data:1.7s vXent:0.1018 iXent:0.2645 TKP_F:8.2799 TKP_D:0.7168 i2v:0.0146 v2i:0.0881 i2i:0.1477 v2v:0.0010 vAcc:98.99% iAcc:95.57% 
+Epoch82 Time:467.0s Data:1.6s vXent:0.0986 iXent:0.2617 TKP_F:8.3747 TKP_D:0.7752 i2v:0.0172 v2i:0.0975 i2i:0.1639 v2v:0.0027 vAcc:99.27% iAcc:95.81% 
+Epoch83 Time:464.2s Data:1.6s vXent:0.1040 iXent:0.2688 TKP_F:8.4143 TKP_D:0.7332 i2v:0.0199 v2i:0.0971 i2i:0.1612 v2v:0.0059 vAcc:99.15% iAcc:95.61% 
+Epoch84 Time:465.9s Data:1.5s vXent:0.0995 iXent:0.2602 TKP_F:8.1867 TKP_D:0.7128 i2v:0.0143 v2i:0.0923 i2i:0.1570 v2v:0.0006 vAcc:99.27% iAcc:95.94% 
+Epoch85 Time:467.4s Data:1.6s vXent:0.0952 iXent:0.2520 TKP_F:8.3451 TKP_D:0.7514 i2v:0.0141 v2i:0.0719 i2i:0.1321 v2v:0.0015 vAcc:99.30% iAcc:95.88% 
+Epoch86 Time:465.6s Data:1.6s vXent:0.0999 iXent:0.2618 TKP_F:8.5043 TKP_D:0.7561 i2v:0.0177 v2i:0.0861 i2i:0.1502 v2v:0.0047 vAcc:99.31% iAcc:95.90% 
+Epoch87 Time:467.4s Data:1.6s vXent:0.0983 iXent:0.2548 TKP_F:8.4572 TKP_D:0.7802 i2v:0.0156 v2i:0.0997 i2i:0.1637 v2v:0.0016 vAcc:99.36% iAcc:96.07% 
+Epoch88 Time:468.6s Data:1.7s vXent:0.1022 iXent:0.2595 TKP_F:8.3831 TKP_D:0.7605 i2v:0.0160 v2i:0.0754 i2i:0.1368 v2v:0.0030 vAcc:99.26% iAcc:95.97% 
+Epoch89 Time:467.3s Data:1.6s vXent:0.1003 iXent:0.2605 TKP_F:8.3048 TKP_D:0.7270 i2v:0.0166 v2i:0.0963 i2i:0.1641 v2v:0.0018 vAcc:99.26% iAcc:96.02% 
+Epoch90 Time:466.6s Data:1.6s vXent:0.1020 iXent:0.2617 TKP_F:8.0788 TKP_D:0.6991 i2v:0.0172 v2i:0.0769 i2i:0.1385 v2v:0.0016 vAcc:99.20% iAcc:96.06% 
+==> Test
+Extract video features
+Extracted features for query set, obtained torch.Size([1980, 2048]) matrix
+Extracted features for gallery set, obtained torch.Size([11310, 2048]) matrix
+Extract image features
+Extracted features for query set, obtained torch.Size([1980, 2048]) matrix
+Extracted features for gallery set, obtained torch.Size([11310, 2048]) matrix
+Extracting features complete in 3m 39s
+Computing distance matrix
+image to image
+top1:67.47% top5:84.65% top10:88.84% mAP:52.05%
+video to video
+top1:79.95% top5:91.62% top10:93.79% mAP:67.75%
+video to image
+top1:73.89% top5:90.25% top10:93.03% mAP:58.54%
+image to video
+top1:71.41% top5:85.61% top10:89.19% mAP:59.72%
+Epoch91 Time:462.8s Data:1.7s vXent:0.1044 iXent:0.2599 TKP_F:8.4099 TKP_D:0.7262 i2v:0.0196 v2i:0.1105 i2i:0.1732 v2v:0.0033 vAcc:99.23% iAcc:95.99% 
+Epoch92 Time:467.3s Data:1.6s vXent:0.0988 iXent:0.2539 TKP_F:8.2026 TKP_D:0.7392 i2v:0.0135 v2i:0.0692 i2i:0.1296 v2v:0.0009 vAcc:99.39% iAcc:96.08% 
+Epoch93 Time:464.9s Data:1.6s vXent:0.1033 iXent:0.2594 TKP_F:8.4000 TKP_D:0.7509 i2v:0.0148 v2i:0.0822 i2i:0.1528 v2v:0.0009 vAcc:99.34% iAcc:96.08% 
+Epoch94 Time:467.0s Data:1.7s vXent:0.0974 iXent:0.2488 TKP_F:8.3682 TKP_D:0.7540 i2v:0.0152 v2i:0.0765 i2i:0.1398 v2v:0.0023 vAcc:99.40% iAcc:96.34% 
+Epoch95 Time:466.1s Data:1.6s vXent:0.1071 iXent:0.2690 TKP_F:8.5226 TKP_D:0.7983 i2v:0.0167 v2i:0.0870 i2i:0.1580 v2v:0.0020 vAcc:99.26% iAcc:95.79% 
+Epoch96 Time:467.4s Data:1.7s vXent:0.1024 iXent:0.2519 TKP_F:8.5067 TKP_D:0.8061 i2v:0.0146 v2i:0.0851 i2i:0.1467 v2v:0.0015 vAcc:99.22% iAcc:96.18% 
+Epoch97 Time:467.6s Data:1.6s vXent:0.1030 iXent:0.2623 TKP_F:8.3775 TKP_D:0.7956 i2v:0.0132 v2i:0.0726 i2i:0.1315 v2v:0.0018 vAcc:99.28% iAcc:95.90% 
+Epoch98 Time:468.9s Data:1.6s vXent:0.0994 iXent:0.2514 TKP_F:8.7511 TKP_D:0.8016 i2v:0.0190 v2i:0.0849 i2i:0.1479 v2v:0.0043 vAcc:99.35% iAcc:96.29% 
+Epoch99 Time:468.5s Data:1.6s vXent:0.1045 iXent:0.2595 TKP_F:8.4607 TKP_D:0.7657 i2v:0.0140 v2i:0.0786 i2i:0.1384 v2v:0.0007 vAcc:99.23% iAcc:96.16% 
+Epoch100 Time:466.3s Data:1.6s vXent:0.1003 iXent:0.2501 TKP_F:8.2675 TKP_D:0.7260 i2v:0.0134 v2i:0.0689 i2i:0.1307 v2v:0.0019 vAcc:99.45% iAcc:96.35% 
+==> Test
+Extract video features
+Extracted features for query set, obtained torch.Size([1980, 2048]) matrix
+Extracted features for gallery set, obtained torch.Size([11310, 2048]) matrix
+Extract image features
+Extracted features for query set, obtained torch.Size([1980, 2048]) matrix
+Extracted features for gallery set, obtained torch.Size([11310, 2048]) matrix
+Extracting features complete in 3m 40s
+Computing distance matrix
+image to image
+top1:68.43% top5:84.85% top10:88.89% mAP:52.77%
+video to video
+top1:80.00% top5:91.52% top10:94.04% mAP:68.37%
+video to image
+top1:74.60% top5:90.35% top10:93.54% mAP:59.13%
+image to video
+top1:72.68% top5:86.06% top10:89.49% mAP:60.60%
+Epoch101 Time:466.8s Data:1.9s vXent:0.1063 iXent:0.2612 TKP_F:8.5414 TKP_D:0.7513 i2v:0.0135 v2i:0.0767 i2i:0.1386 v2v:0.0006 vAcc:99.09% iAcc:95.96% 
+Epoch102 Time:466.5s Data:1.5s vXent:0.1030 iXent:0.2492 TKP_F:8.4807 TKP_D:0.7697 i2v:0.0136 v2i:0.0732 i2i:0.1319 v2v:0.0012 vAcc:99.27% iAcc:96.31% 
+Epoch103 Time:466.8s Data:1.6s vXent:0.0996 iXent:0.2546 TKP_F:8.5938 TKP_D:0.7723 i2v:0.0159 v2i:0.0915 i2i:0.1530 v2v:0.0023 vAcc:99.44% iAcc:96.25% 
+Epoch104 Time:467.1s Data:1.6s vXent:0.1040 iXent:0.2619 TKP_F:8.8054 TKP_D:0.8143 i2v:0.0166 v2i:0.0872 i2i:0.1520 v2v:0.0018 vAcc:99.34% iAcc:96.06% 
+Epoch105 Time:468.6s Data:1.6s vXent:0.1048 iXent:0.2542 TKP_F:8.7354 TKP_D:0.7791 i2v:0.0133 v2i:0.0677 i2i:0.1275 v2v:0.0015 vAcc:99.32% iAcc:96.18% 
+Epoch106 Time:465.3s Data:1.5s vXent:0.1010 iXent:0.2466 TKP_F:8.8027 TKP_D:0.7787 i2v:0.0149 v2i:0.0711 i2i:0.1352 v2v:0.0020 vAcc:99.22% iAcc:96.35% 
+Epoch107 Time:468.4s Data:1.6s vXent:0.0986 iXent:0.2471 TKP_F:8.5304 TKP_D:0.7596 i2v:0.0121 v2i:0.0627 i2i:0.1215 v2v:0.0012 vAcc:99.39% iAcc:96.47% 
+Epoch108 Time:467.1s Data:1.6s vXent:0.0963 iXent:0.2351 TKP_F:8.5879 TKP_D:0.7550 i2v:0.0165 v2i:0.0745 i2i:0.1357 v2v:0.0043 vAcc:99.51% iAcc:96.43% 
+Epoch109 Time:467.1s Data:1.7s vXent:0.1022 iXent:0.2497 TKP_F:8.5737 TKP_D:0.7611 i2v:0.0138 v2i:0.0663 i2i:0.1256 v2v:0.0014 vAcc:99.27% iAcc:96.37% 
+Epoch110 Time:464.6s Data:1.7s vXent:0.1014 iXent:0.2457 TKP_F:8.6197 TKP_D:0.7530 i2v:0.0148 v2i:0.0672 i2i:0.1237 v2v:0.0013 vAcc:99.28% iAcc:96.33% 
+==> Test
+Extract video features
+Extracted features for query set, obtained torch.Size([1980, 2048]) matrix
+Extracted features for gallery set, obtained torch.Size([11310, 2048]) matrix
+Extract image features
+Extracted features for query set, obtained torch.Size([1980, 2048]) matrix
+Extracted features for gallery set, obtained torch.Size([11310, 2048]) matrix
+Extracting features complete in 3m 40s
+Computing distance matrix
+image to image
+top1:68.23% top5:84.29% top10:88.59% mAP:52.49%
+video to video
+top1:79.24% top5:91.06% top10:93.08% mAP:66.98%
+video to image
+top1:74.19% top5:89.80% top10:92.63% mAP:58.48%
+image to video
+top1:72.07% top5:85.71% top10:89.60% mAP:59.63%
+Epoch111 Time:467.4s Data:1.6s vXent:0.0990 iXent:0.2407 TKP_F:8.6760 TKP_D:0.7601 i2v:0.0134 v2i:0.0704 i2i:0.1272 v2v:0.0015 vAcc:99.47% iAcc:96.46% 
+Epoch112 Time:465.9s Data:1.6s vXent:0.0997 iXent:0.2436 TKP_F:8.5890 TKP_D:0.7685 i2v:0.0117 v2i:0.0739 i2i:0.1336 v2v:0.0005 vAcc:99.44% iAcc:96.41% 
+Epoch113 Time:465.1s Data:1.5s vXent:0.0987 iXent:0.2393 TKP_F:8.8002 TKP_D:0.7785 i2v:0.0120 v2i:0.0609 i2i:0.1126 v2v:0.0023 vAcc:99.36% iAcc:96.57% 
+Epoch114 Time:467.0s Data:1.6s vXent:0.0969 iXent:0.2403 TKP_F:8.7037 TKP_D:0.7572 i2v:0.0122 v2i:0.0644 i2i:0.1254 v2v:0.0004 vAcc:99.37% iAcc:96.56% 
+Epoch115 Time:467.9s Data:1.7s vXent:0.0993 iXent:0.2493 TKP_F:8.6874 TKP_D:0.7382 i2v:0.0156 v2i:0.0727 i2i:0.1337 v2v:0.0032 vAcc:99.36% iAcc:96.25% 
+Epoch116 Time:461.3s Data:1.7s vXent:0.1022 iXent:0.2521 TKP_F:8.9564 TKP_D:0.8081 i2v:0.0184 v2i:0.0922 i2i:0.1516 v2v:0.0036 vAcc:99.47% iAcc:96.41% 
+Epoch117 Time:467.4s Data:1.6s vXent:0.0996 iXent:0.2415 TKP_F:8.9531 TKP_D:0.8190 i2v:0.0134 v2i:0.0697 i2i:0.1248 v2v:0.0016 vAcc:99.55% iAcc:96.54% 
+Epoch118 Time:468.6s Data:1.7s vXent:0.0982 iXent:0.2422 TKP_F:8.7993 TKP_D:0.7736 i2v:0.0138 v2i:0.0685 i2i:0.1286 v2v:0.0005 vAcc:99.48% iAcc:96.58% 
+Epoch119 Time:467.8s Data:1.6s vXent:0.0986 iXent:0.2454 TKP_F:8.7218 TKP_D:0.7638 i2v:0.0141 v2i:0.0683 i2i:0.1268 v2v:0.0022 vAcc:99.41% iAcc:96.39% 
+Epoch120 Time:468.6s Data:1.6s vXent:0.0955 iXent:0.2392 TKP_F:8.9117 TKP_D:0.7523 i2v:0.0122 v2i:0.0715 i2i:0.1288 v2v:0.0011 vAcc:99.51% iAcc:96.60% 
+==> Test
+Extract video features
+Extracted features for query set, obtained torch.Size([1980, 2048]) matrix
+Extracted features for gallery set, obtained torch.Size([11310, 2048]) matrix
+Extract image features
+Extracted features for query set, obtained torch.Size([1980, 2048]) matrix
+Extracted features for gallery set, obtained torch.Size([11310, 2048]) matrix
+Extracting features complete in 3m 41s
+Computing distance matrix
+image to image
+top1:68.13% top5:84.75% top10:89.09% mAP:52.82%
+video to video
+top1:80.61% top5:91.77% top10:94.09% mAP:67.81%
+video to image
+top1:74.80% top5:90.45% top10:92.98% mAP:59.02%
+image to video
+top1:73.48% top5:86.31% top10:89.65% mAP:60.89%
+Epoch121 Time:466.0s Data:1.9s vXent:0.0802 iXent:0.2107 TKP_F:8.3991 TKP_D:0.7367 i2v:0.0123 v2i:0.0649 i2i:0.1256 v2v:0.0008 vAcc:99.53% iAcc:97.22% 
+Epoch122 Time:465.2s Data:1.6s vXent:0.0769 iXent:0.2046 TKP_F:8.1581 TKP_D:0.7165 i2v:0.0102 v2i:0.0487 i2i:0.0994 v2v:0.0003 vAcc:99.71% iAcc:97.21% 
+Epoch123 Time:466.0s Data:1.8s vXent:0.0770 iXent:0.2084 TKP_F:8.1541 TKP_D:0.7459 i2v:0.0111 v2i:0.0667 i2i:0.1314 v2v:0.0001 vAcc:99.65% iAcc:97.17% 
+Epoch124 Time:467.2s Data:1.7s vXent:0.0786 iXent:0.2153 TKP_F:8.0733 TKP_D:0.7267 i2v:0.0123 v2i:0.0699 i2i:0.1277 v2v:0.0010 vAcc:99.57% iAcc:97.01% 
+Epoch125 Time:468.4s Data:1.6s vXent:0.0764 iXent:0.2123 TKP_F:8.0948 TKP_D:0.7564 i2v:0.0103 v2i:0.0492 i2i:0.1033 v2v:0.0003 vAcc:99.68% iAcc:96.95% 
+Epoch126 Time:468.3s Data:1.6s vXent:0.0749 iXent:0.2084 TKP_F:7.9921 TKP_D:0.7214 i2v:0.0106 v2i:0.0500 i2i:0.1008 v2v:0.0002 vAcc:99.60% iAcc:97.09% 
+Epoch127 Time:467.8s Data:1.6s vXent:0.0720 iXent:0.2007 TKP_F:7.9334 TKP_D:0.7157 i2v:0.0089 v2i:0.0447 i2i:0.0954 v2v:0.0002 vAcc:99.84% iAcc:97.39% 
+Epoch128 Time:465.0s Data:1.6s vXent:0.0752 iXent:0.2086 TKP_F:8.0491 TKP_D:0.7563 i2v:0.0124 v2i:0.0622 i2i:0.1199 v2v:0.0006 vAcc:99.60% iAcc:97.13% 
+Epoch129 Time:468.7s Data:1.6s vXent:0.0719 iXent:0.2057 TKP_F:8.0056 TKP_D:0.7340 i2v:0.0151 v2i:0.0648 i2i:0.1236 v2v:0.0039 vAcc:99.61% iAcc:97.21% 
+Epoch130 Time:469.6s Data:1.6s vXent:0.0724 iXent:0.2063 TKP_F:7.9599 TKP_D:0.7240 i2v:0.0121 v2i:0.0609 i2i:0.1185 v2v:0.0009 vAcc:99.71% iAcc:97.14% 
+==> Test
+Extract video features
+Extracted features for query set, obtained torch.Size([1980, 2048]) matrix
+Extracted features for gallery set, obtained torch.Size([11310, 2048]) matrix
+Extract image features
+Extracted features for query set, obtained torch.Size([1980, 2048]) matrix
+Extracted features for gallery set, obtained torch.Size([11310, 2048]) matrix
+Extracting features complete in 3m 41s
+Computing distance matrix
+image to image
+top1:68.33% top5:85.15% top10:88.94% mAP:53.06%
+video to video
+top1:81.11% top5:91.82% top10:93.99% mAP:68.67%
+video to image
+top1:75.71% top5:90.35% top10:93.28% mAP:59.57%
+image to video
+top1:73.08% top5:86.06% top10:89.24% mAP:61.06%
+Epoch131 Time:466.3s Data:1.6s vXent:0.0712 iXent:0.1981 TKP_F:7.8954 TKP_D:0.7373 i2v:0.0090 v2i:0.0408 i2i:0.0927 v2v:0.0000 vAcc:99.69% iAcc:97.21% 
+Epoch132 Time:467.3s Data:1.7s vXent:0.0727 iXent:0.2037 TKP_F:7.9533 TKP_D:0.7181 i2v:0.0089 v2i:0.0435 i2i:0.0987 v2v:0.0000 vAcc:99.71% iAcc:97.21% 
+Epoch133 Time:467.8s Data:1.6s vXent:0.0745 iXent:0.2043 TKP_F:8.0812 TKP_D:0.7852 i2v:0.0086 v2i:0.0500 i2i:0.1046 v2v:0.0002 vAcc:99.73% iAcc:97.34% 
+Epoch134 Time:466.8s Data:1.6s vXent:0.0762 iXent:0.2124 TKP_F:8.0555 TKP_D:0.7636 i2v:0.0113 v2i:0.0525 i2i:0.1121 v2v:0.0006 vAcc:99.51% iAcc:97.10% 
+Epoch135 Time:467.6s Data:1.6s vXent:0.0712 iXent:0.2017 TKP_F:7.9783 TKP_D:0.7476 i2v:0.0105 v2i:0.0542 i2i:0.1051 v2v:0.0008 vAcc:99.71% iAcc:97.26% 
+Epoch136 Time:468.6s Data:1.6s vXent:0.0714 iXent:0.1985 TKP_F:7.9482 TKP_D:0.7606 i2v:0.0093 v2i:0.0534 i2i:0.1067 v2v:0.0006 vAcc:99.75% iAcc:97.50% 
+Epoch137 Time:467.5s Data:1.6s vXent:0.0704 iXent:0.2009 TKP_F:7.8960 TKP_D:0.7378 i2v:0.0124 v2i:0.0550 i2i:0.1069 v2v:0.0031 vAcc:99.71% iAcc:97.30% 
+Epoch138 Time:467.6s Data:1.6s vXent:0.0704 iXent:0.1985 TKP_F:7.9051 TKP_D:0.7346 i2v:0.0131 v2i:0.0576 i2i:0.1144 v2v:0.0030 vAcc:99.75% iAcc:97.44% 
+Epoch139 Time:466.7s Data:1.6s vXent:0.0736 iXent:0.2042 TKP_F:7.9122 TKP_D:0.7240 i2v:0.0120 v2i:0.0649 i2i:0.1166 v2v:0.0013 vAcc:99.64% iAcc:97.08% 
+Epoch140 Time:468.7s Data:1.7s vXent:0.0752 iXent:0.2085 TKP_F:7.9115 TKP_D:0.7120 i2v:0.0121 v2i:0.0592 i2i:0.1210 v2v:0.0001 vAcc:99.63% iAcc:97.24% 
+==> Test
+Extract video features
+Extracted features for query set, obtained torch.Size([1980, 2048]) matrix
+Extracted features for gallery set, obtained torch.Size([11310, 2048]) matrix
+Extract image features
+Extracted features for query set, obtained torch.Size([1980, 2048]) matrix
+Extracted features for gallery set, obtained torch.Size([11310, 2048]) matrix
+Extracting features complete in 3m 41s
+Computing distance matrix
+image to image
+top1:68.28% top5:85.40% top10:89.44% mAP:53.54%
+video to video
+top1:80.56% top5:92.12% top10:94.14% mAP:68.94%
+video to image
+top1:76.11% top5:90.81% top10:93.38% mAP:60.33%
+image to video
+top1:73.23% top5:86.11% top10:89.75% mAP:61.61%
+Epoch141 Time:467.7s Data:1.6s vXent:0.0712 iXent:0.1998 TKP_F:7.9422 TKP_D:0.7404 i2v:0.0100 v2i:0.0516 i2i:0.1050 v2v:0.0010 vAcc:99.79% iAcc:97.40% 
+Epoch142 Time:467.9s Data:1.6s vXent:0.0722 iXent:0.2028 TKP_F:7.8326 TKP_D:0.7086 i2v:0.0093 v2i:0.0410 i2i:0.0929 v2v:0.0004 vAcc:99.72% iAcc:97.32% 
+Epoch143 Time:467.5s Data:1.6s vXent:0.0733 iXent:0.2054 TKP_F:7.9252 TKP_D:0.7319 i2v:0.0107 v2i:0.0496 i2i:0.1037 v2v:0.0012 vAcc:99.73% iAcc:97.26% 
+Epoch144 Time:468.8s Data:1.6s vXent:0.0753 iXent:0.2097 TKP_F:7.9480 TKP_D:0.7584 i2v:0.0120 v2i:0.0598 i2i:0.1185 v2v:0.0009 vAcc:99.65% iAcc:97.10% 
+Epoch145 Time:468.6s Data:1.6s vXent:0.0785 iXent:0.2120 TKP_F:7.9233 TKP_D:0.7231 i2v:0.0110 v2i:0.0567 i2i:0.1099 v2v:0.0024 vAcc:99.68% iAcc:97.08% 
+Epoch146 Time:466.2s Data:1.6s vXent:0.0707 iXent:0.1996 TKP_F:7.9314 TKP_D:0.7241 i2v:0.0138 v2i:0.0577 i2i:0.1132 v2v:0.0046 vAcc:99.67% iAcc:97.31% 
+Epoch147 Time:468.4s Data:1.6s vXent:0.0690 iXent:0.1945 TKP_F:7.9131 TKP_D:0.7226 i2v:0.0085 v2i:0.0452 i2i:0.0940 v2v:0.0004 vAcc:99.69% iAcc:97.54% 
+Epoch148 Time:467.4s Data:1.7s vXent:0.0696 iXent:0.1947 TKP_F:7.9005 TKP_D:0.7181 i2v:0.0095 v2i:0.0493 i2i:0.1008 v2v:0.0005 vAcc:99.73% iAcc:97.41% 
+Epoch149 Time:466.0s Data:1.6s vXent:0.0723 iXent:0.2016 TKP_F:7.9430 TKP_D:0.7305 i2v:0.0103 v2i:0.0545 i2i:0.1095 v2v:0.0001 vAcc:99.67% iAcc:97.34% 
+Epoch150 Time:468.8s Data:1.7s vXent:0.0714 iXent:0.2026 TKP_F:7.9470 TKP_D:0.7198 i2v:0.0122 v2i:0.0614 i2i:0.1204 v2v:0.0006 vAcc:99.68% iAcc:97.24% 
+==> Test
+Extract video features
+Extracted features for query set, obtained torch.Size([1980, 2048]) matrix
+Extracted features for gallery set, obtained torch.Size([11310, 2048]) matrix
+Extract image features
+Extracted features for query set, obtained torch.Size([1980, 2048]) matrix
+Extracted features for gallery set, obtained torch.Size([11310, 2048]) matrix
+Extracting features complete in 3m 39s
+Computing distance matrix
+image to image
+top1:68.69% top5:85.40% top10:89.09% mAP:53.15%
+video to video
+top1:81.16% top5:92.42% top10:94.34% mAP:69.07%
+video to image
+top1:75.71% top5:90.96% top10:93.64% mAP:59.98%
+image to video
+top1:74.19% top5:86.21% top10:89.44% mAP:61.52%
+==> Best Rank-1 74.2%, achieved at epoch 150
+Finished. Total elapsed time (h:m:s): 20:36:42. Training time (h:m:s): 19:31:55.

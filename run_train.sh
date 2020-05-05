@@ -1,0 +1,1 @@
+python train.py --root /home/lhy/public/Dataset/ -d mars --save_dir log-mars
